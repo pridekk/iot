@@ -26,7 +26,7 @@ def demo(n, block_orientation, rotate, inreverse):
     time.sleep(1)
     for x in range(256):
         with canvas(device) as draw:
-            text(draw, (0, 0), chr(x), fill="white", font=)
+            text(draw, (0, 0), chr(x), fill="white")
             time.sleep(0.1)
 
 
