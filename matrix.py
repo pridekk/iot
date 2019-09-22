@@ -20,12 +20,13 @@ def demo(n, block_orientation, rotate, inreverse):
     serial = spi(port=0, device=0, gpio=noop())
     device = max7219(serial, cascaded=n or 1, block_orientation=block_orientation,
                      rotate=rotate or 0, blocks_arranged_in_reverse_order=inreverse)
+    print(device.bounding_box)
     print("Created device")
 
     time.sleep(1)
     for x in range(256):
         with canvas(device) as draw:
-            text(draw, (0, 0), chr(x), fill="white")
+            text(draw, (0, 0), chr(x), fill="white", font=)
             time.sleep(0.1)
 
 
