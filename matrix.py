@@ -29,20 +29,20 @@ def demo(n, block_orientation, rotate, inreverse):
     while True:
         usedNum = randrange(0,6)
         if usedNum < 2:
-            goodCondition()
-        else if usedNum < 4:
-            notsogoodCondition()
-        else
-            badCondition()
+            goodCondition(device)
+        elif usedNum < 4:
+            notsogoodCondition(device)
+        else:
+            badCondition(device)
         
         
-def goodCondition():
+def goodCondition(device):
      with canvas(device) as draw:
         draw.rectangle((0,0,3,7),fill="white", outline="white")
-def notsogoodCondition():
+def notsogoodCondition(device):
      with canvas(device) as draw:
         draw.rectangle((0,0,8,7),fill="white", outline="white")
-def badCondition():
+def badCondition(device):
      with canvas(device) as draw:
         draw.rectangle((0,0,30,7),fill="white", outline="white")
 
