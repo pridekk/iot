@@ -6,6 +6,7 @@
 import re
 import time
 import argparse
+from random import randrange
 
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
@@ -24,11 +25,26 @@ def demo(n, block_orientation, rotate, inreverse):
     print("Created device")
 
     time.sleep(1)
-   
-    with canvas(device) as draw:
-        draw.rectangle((0,0,3,3), outline="white")
-#         text(draw, (0, 0), chr(x), fill="white")
+    device.contrast(2)
+    while True:
+        usedNum = randrange(0,6)
+        if usedNum < 2:
+            goodCondition()
+        else if usedNum < 4:
+            notsogoodCondition()
+        else
+            badCondition()
         
+        
+def goodCondition():
+     with canvas(device) as draw:
+        draw.rectangle((0,0,3,7),fill="white", outline="white")
+def notsogoodCondition():
+     with canvas(device) as draw:
+        draw.rectangle((0,0,8,7),fill="white", outline="white")
+def badCondition():
+     with canvas(device) as draw:
+        draw.rectangle((0,0,30,7),fill="white", outline="white")
 
 
 if __name__ == "__main__":
