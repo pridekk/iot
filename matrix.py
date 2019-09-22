@@ -24,10 +24,11 @@ def demo(n, block_orientation, rotate, inreverse):
     print("Created device")
 
     time.sleep(1)
-    for x in range(256):
-        with canvas(device) as draw:
-            text(draw, (0, 0), chr(x), fill="white")
-            time.sleep(0.1)
+   
+    with canvas(device) as draw:
+        draw.rectangle((0,0,3,3), outline="white")
+#         text(draw, (0, 0), chr(x), fill="white")
+        
 
 
 if __name__ == "__main__":
